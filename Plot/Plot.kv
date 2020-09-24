@@ -1,0 +1,14 @@
+
+<Plot>:
+    canvas:
+        Color:
+            rgba: .5, .5, .5, 0.5
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+        Color:
+            rgba: self.plot_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    on_press: self.set_is_wall()

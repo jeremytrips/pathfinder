@@ -1,0 +1,45 @@
+BoxLayout:
+    BoxLayout:
+        orientation: 'vertical'
+        width: 250
+        size_hint_x: None
+        padding: 0
+        spacing: 15
+        BoxLayout:
+            orientation: 'vertical'
+            height: 65
+            size_hint_y: None
+            Label:
+                text: "Number of row"
+            Label:
+                text: str(round(x_slider.value))
+            Slider:
+                id: x_slider
+                value: 5
+                min: 1
+                max: 30
+        BoxLayout:
+            orientation: 'vertical'
+            height: 65
+            size_hint_y: None
+            Label:
+                text: "Number of cols"
+            Label:
+                text: str(round(y_slider.value))
+            Slider:
+                id: y_slider
+                value: 5
+                min: 1
+                max: 30
+        Widget:
+
+        Button:
+            text: "Generate maze"
+            on_press: maze_grid.generate_maze(round(x_slider.value), round(y_slider.value))
+            size_hint: (0.8, None)
+            pos_hint: {'x': 0.1, 'y': 0.5}
+            height: 75
+    MazeLayout:
+        id: maze_layout
+        MazeGrid:
+            id: maze_grid
